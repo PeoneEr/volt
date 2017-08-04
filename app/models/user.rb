@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validate :passwords_present
   validate :passwords_equal
 
-  %w(user admin).each do |text_role|
+  %w[user admin].each do |text_role|
     define_method %(#{text_role}?) do
       text_role == role
     end
