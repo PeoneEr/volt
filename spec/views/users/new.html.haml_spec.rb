@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "users/new.html.haml", type: :view do
+RSpec.describe 'users/new.html.haml', type: :view do
   it 'should have form' do
     @user = User.new
     render

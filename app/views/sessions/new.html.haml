@@ -1,0 +1,5 @@
+.row
+  .col-xs-12
+    = simple_form_for :session, url: session_path, method: :post do |f|
+      = f.input :email
+      = f.input :password

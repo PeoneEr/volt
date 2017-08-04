@@ -16,7 +16,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'POST #create' do
     it 'redirect to root_path if success' do
-      post :create, params: { user: { email: Faker::Internet.email, password: 12345, password_confirmation: 12345, role: :user } }
+      post :create, params: { user: { email: Faker::Internet.email, password: 12_345, password_confirmation: 12_345, role: :user } }
 
       expect(response).to redirect_to(root_path)
     end
