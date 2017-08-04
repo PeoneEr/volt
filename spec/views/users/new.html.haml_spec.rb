@@ -5,6 +5,6 @@ RSpec.describe "users/new.html.haml", type: :view do
     @user = User.new
     render
 
-    expect(rendered).to have_selector('form', class: 'simple_form')
+    expect(rendered).to have_selector('form', class: 'simple_form new_user')
   end
 end
