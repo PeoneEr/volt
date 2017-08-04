@@ -12,13 +12,16 @@ gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.4'
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'faker'
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov', require: false
 end
 
 group :development do
