@@ -8,6 +8,7 @@
 #  role               :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  token              :string
 #
 
 class User < ApplicationRecord
@@ -16,6 +17,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validate :passwords_present
   validate :passwords_equal
+
+  has_many :tasks, dependent: :destroy
 
   after_validation :store_encrypted_password
   after_validation :store_encrypted_token

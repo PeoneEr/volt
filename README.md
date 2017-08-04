@@ -1,24 +1,11 @@
-# README
+# VoltMobi test app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Для запуска необходимы ruby >= 2.3
 
-Things you may want to cover:
+```
+bundle install
+bundle exec rails db:create db:migrate db:seed
+bundle exec rspec .
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+open coverage/index.html
+```
