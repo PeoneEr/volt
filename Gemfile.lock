@@ -53,6 +53,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
+    cancancan (1.15.0)
     capybara (2.14.4)
       addressable
       mime-types (>= 1.16)
@@ -107,6 +108,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    ordinare (0.3.0)
     public_suffix (2.0.5)
     puma (3.9.1)
     rack (2.0.3)
@@ -222,6 +224,7 @@ DEPENDENCIES
   annotate
   bootstrap-sass (~> 3.3.6)
   byebug
+  cancancan
   capybara
   coffee-rails (~> 4.2)
   faker
@@ -230,6 +233,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  ordinare
   puma (~> 3.0)
   rails (~> 5.0.4)
   rails-controller-testing

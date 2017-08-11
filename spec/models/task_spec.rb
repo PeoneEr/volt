@@ -25,10 +25,17 @@ RSpec.describe Task, type: :model do
       expect(task).not_to be_new_record
     end
 
+    it 'should not create if invalid' do
+      task = user.tasks.new
+
+      expect(task.valid?).to eq(false)
+      task.save
+      expect(task).to be_new_record
+    end
+
     it 'should have user' do
       task.save
-
-      expect(task.user.email).to eq(user.email)
+      expect(task.user).to eq(user)
     end
   end
 end

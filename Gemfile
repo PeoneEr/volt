@@ -7,6 +7,7 @@ end
 
 gem 'aasm'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'cancancan'
 gem 'coffee-rails', '~> 4.2'
 gem 'haml'
 gem 'hashie'
@@ -32,6 +33,7 @@ end
 group :development do
   gem 'annotate'
   gem 'listen', '~> 3.0.5'
+  gem 'ordinare'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
