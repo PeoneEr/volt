@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   root to: 'tasks#index'
+
+  namespace :my do
+    resources :tasks
+
+    root to: 'tasks#index'
+  end
 end

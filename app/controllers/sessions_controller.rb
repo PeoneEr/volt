@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.encrypted_password == EncrypeService.new(session_params[:password]).call
       sign_in(user)
 
-      redirect_to root_path
+      redirect_to my_root_path
     else
       render :new
     end

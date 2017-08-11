@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      redirect_to root_path
+      sign_in(@user)
+      redirect_to my_root_path
     else
       render 'new'
     end
@@ -17,6 +18,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user)
-      .permit(:password, :password_confirmation, :email, :role)
+      .permit(:password, :password_confirmation, :email)
   end
 end

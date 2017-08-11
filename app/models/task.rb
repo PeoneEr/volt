@@ -15,4 +15,6 @@ class Task < ApplicationRecord
   belongs_to :user # presence true by default
 
   validates :name, presence: true
+
+  scope :ordered_by_id, -> { order(:id) }
 end
