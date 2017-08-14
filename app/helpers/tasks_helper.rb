@@ -10,7 +10,7 @@ module TasksHelper
   def show_file(task)
     return unless task.file?
 
-    image_tag task.file_url, class: 'img-responsive' if task.file_image?
+    return image_tag task.file_url, class: 'img-responsive' if task.file_image?
 
     link_to t('tasks.download'), download_my_task_path(task)
   end

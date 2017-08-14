@@ -1,4 +1,6 @@
 class My::TasksController < ApplicationController
+  before_action :authorize!
+
   before_action :find_task,
     only: %i[show edit update destroy download to_new to_started to_finished]
 
@@ -76,5 +78,11 @@ class My::TasksController < ApplicationController
 
   def find_task
     @task = Task.find(params[:id])
+  end
+
+  def authorize!
+    return if current_user
+
+    redirect_to new_session_path
   end
 end
