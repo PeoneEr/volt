@@ -11,3 +11,19 @@ ru:
     edit_task: 'Изменение задачи'
     save_task: 'Сохранить задачу'
     download: 'Скачать файл'
+    edit: 'Изменить'
+    destroy: 'Удалить'
+    destroy_confirm: 'Вы уверены?'
+    to_new: 'Новая задача'
+    to_started: 'В процессе'
+    to_finished: 'Завершена'
+    dropdown: 'Изменить состояние задачи'
+    actions: 'Действия'
+
+  activerecord:
+    attributes:
+      task:
+        state: 'Состояние'
+        state/new: 'Новая'
+        state/started: 'В процессе'
+        state/finished: 'Завершена'

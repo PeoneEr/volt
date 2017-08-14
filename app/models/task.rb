@@ -20,9 +20,29 @@ class Task < ApplicationRecord
 
   include AASM
 
+  aasm column: :state do
+    state :new, initial: true
+    state :started
+    state :finished
+
+    event :to_new do
+      transitions to: :new
+    end
+
+    event :to_started do
+      transitions to: :started
+    end
+
+    event :to_finished do
+      transitions to: :finished
+    end
+  end
+
   mount_uploader :file, FileUploader
 
   def file_image?
+    return false unless file?
+
     %w[jpg jpeg png bmp].include?(file.file.extension)
   end
 end

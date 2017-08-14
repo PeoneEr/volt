@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   concern :taskable do
     resources :tasks do
-      get :download, on: :member
+      member do
+        get :download
+
+        %i[to_new to_started to_finished].each do |action|
+          put action
+        end
+      end
     end
   end
 

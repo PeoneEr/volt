@@ -6,5 +6,7 @@
       = f.input :name
       = f.input :description
       = f.input :file
+      - if current_user.admin?
+        = f.input :user_id, collection: User.all, value_method: :id, label_method: :email
 
       = f.submit t('tasks.save_task'), class: 'btn btn-success'

@@ -9,6 +9,7 @@
         %th= t('tasks.name')
         %th= t('tasks.description')
         %th= t('tasks.state')
+        %th= ''
         %th= t('tasks.created_at')
         - if current_user.admin?
           %th= t('tasks.user')
@@ -17,11 +18,21 @@
       %tbody
         - @tasks.each do |task|
           %tr
-            %td= task.id
-            %td= task.name
+            %td= link_to task.id, [:my, task]
+            %td= link_to task.name, [:my, task]
             %td= simple_format(task.description)
             %td= task.aasm.human_state
+            %td
+              .dropdown
+                %button.btn.btn-default.dropdown-toggle{type: :button, id: :dropdownMenu1, 'data-toggle': :dropdown, 'aria-haspopup': true, 'aria-expanded': true}
+                  = t('tasks.dropdown')
+                  %span.caret
+                %ul.dropdown-menu{'aria-labelledby': :dropdownMenu1}
+                  %li
+                    = link_to t('tasks.to_new'), to_new_my_task_path(task), method: :put
+                    = link_to t('tasks.to_started'), to_started_my_task_path(task), method: :put
+                    = link_to t('tasks.to_finished'), to_finished_my_task_path(task), method: :put
             %td= I18n.l(task.created_at, format: :long)
             - if current_user.admin?
               %td= task.user.email
-            %td= edit_destroy_actions
+            %td= edit_destroy_actions(task)

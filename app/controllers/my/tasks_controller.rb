@@ -1,5 +1,6 @@
 class My::TasksController < ApplicationController
-  before_action :find_task, only: %i[show edit update destroy download]
+  before_action :find_task,
+    only: %i[show edit update destroy download to_new to_started to_finished]
 
   def index
     @tasks = if current_user.admin?
@@ -56,6 +57,14 @@ class My::TasksController < ApplicationController
   def download
     send_file @task.file.path,
               disposition: :attachment
+  end
+
+  %i[to_new to_started to_finished].each do |action|
+    define_method action do
+      @task.send(%(#{action}!))
+
+      redirect_to :back
+    end
   end
 
   private
