@@ -19,6 +19,15 @@ ru:
     to_finished: 'Завершена'
     dropdown: 'Изменить состояние задачи'
     actions: 'Действия'
+    index: 'Все задачи'
+    my: 'Личный кабинет'
+
+  user:
+    create: 'Зарегистрироваться'
+
+  session:
+    sign_in: 'Войти'
+    exit: 'Выйти'
 
   activerecord:
     attributes:

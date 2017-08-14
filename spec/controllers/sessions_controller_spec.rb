@@ -20,7 +20,7 @@ RSpec.describe SessionsController, type: :controller do
     it 'should authorize valid user' do
       post :create, params: { session: { email: user.email, password: 123 } }
 
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(my_root_path)
       expect(current_user).not_to be(nil)
     end
 
@@ -33,7 +33,7 @@ RSpec.describe SessionsController, type: :controller do
     it 'should destroy session' do
       post :create, params: { session: { email: user.email, password: 123 } }
 
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(my_root_path)
       expect(current_user).not_to be(nil)
 
       delete :destroy
