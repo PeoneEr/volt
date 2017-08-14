@@ -2,8 +2,8 @@
   .col-xs-12
     = simple_form_for @user do |f|
       = f.input :email
-      = f.input :password
-      = f.input :password_confirmation
+      = f.input :password, required: true
+      = f.input :password_confirmation, required: true
       = f.input :role, collection: [:user, :admin]
 
       = f.submit class: 'btn btn-primary'
