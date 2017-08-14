@@ -9,3 +9,5 @@ bundle exec rspec .
 
 open coverage/index.html
 ```
+
+## После выполнения db:seed появится информация об администраторе
