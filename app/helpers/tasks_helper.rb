@@ -6,4 +6,10 @@ module TasksHelper
 
     links.join
   end
+
+  def show_file(task)
+    image_tag task.file_url, class: 'img-responsive' if task.file_image?
+
+    link_to t('tasks.download'), download_my_task_path(task)
+  end
 end

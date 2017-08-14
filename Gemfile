@@ -7,6 +7,7 @@ end
 
 gem 'aasm'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'carrierwave', '~> 1.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'haml'
 gem 'hashie'

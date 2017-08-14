@@ -1,5 +1,5 @@
 class My::TasksController < ApplicationController
-  before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :find_task, only: %i[show edit update destroy download]
 
   def index
     @tasks = if current_user.admin?
@@ -31,11 +31,9 @@ class My::TasksController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @task.attributes = task_params
@@ -55,11 +53,16 @@ class My::TasksController < ApplicationController
     end
   end
 
+  def download
+    send_file @task.file.path,
+              disposition: :attachment
+  end
+
   private
 
   def task_params
     params.require(:task)
-      .permit(:name, :description, :user_id)
+          .permit(:name, :description, :user_id, :file)
   end
 
   def find_task

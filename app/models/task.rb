@@ -17,4 +17,12 @@ class Task < ApplicationRecord
   validates :name, presence: true
 
   scope :ordered_by_id, -> { order(:id) }
+
+  include AASM
+
+  mount_uploader :file, FileUploader
+
+  def file_image?
+    %w[jpg jpeg png bmp].include?(file.file.extension)
+  end
 end

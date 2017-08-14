@@ -2,3 +2,7 @@
   .col-xs-12
     %h1= @task.name
     %h2= simple_format(@task.description)
+
+    .row
+      .col-xs-4
+        = show_file(@task)
