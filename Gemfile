@@ -32,7 +32,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
-gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :development do
