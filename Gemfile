@@ -18,9 +18,12 @@ gem 'rails', '~> 5.0.4'
 gem 'russian'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
-gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -29,6 +32,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
+gem 'sqlite3'
 end
 
 group :development do
