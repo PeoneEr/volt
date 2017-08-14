@@ -11,7 +11,13 @@ ru:
       task:
         name: 'Название'
         description: 'Описание'
-        user: 'Пользователь'
+        user_id: 'Пользователь'
+        file: 'Файл'
+      user:
+        role: 'Роль'
+        email: 'Email'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
     # Examples
     # labels:
     #   defaults:
